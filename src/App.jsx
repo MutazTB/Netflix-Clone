@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route} from "react-router-dom";
 
 import Home from "./components/home/Home"
-//import MovieList from "./components/MovieList/movieList"
+import MyFavList from "./components/FavList /favlist"
 
 
 export default function App(){
     return(
         <Routes>
             <Route path="/"element={<Home/>}/>
-            {/* <Route path="/MovieList"element={<MovieList/>}/> */}
+            <Route path="/getMovies"element={<MyFavList/>}/>
         </Routes>
     )
 }
