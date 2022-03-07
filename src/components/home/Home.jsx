@@ -7,7 +7,7 @@ export default function Home() {
     const [trending, setTrending] = useState([]);
 
     async function getData() {
-        let response = await fetch(`https://movies4ever.herokuapp.com/trending`);
+        let response = await fetch(`${process.env.REACT_APP_SERVER}/trending`);
 
         let data = await response.json();
         setTrending(data);
@@ -17,14 +17,13 @@ export default function Home() {
     useEffect(() => {
         getData();
     }, []);
-    console.log(trending);
+  
     return (
         <>
             <h1>From home page</h1>
             <Navbar />
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
-                {trending && <MovieList trending={trending} />}
-                {/* <Favlist /> */}
+                {trending && <MovieList trendingMovie={trending} />}                
             </div>
 
 

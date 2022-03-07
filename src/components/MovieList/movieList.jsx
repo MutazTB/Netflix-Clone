@@ -3,7 +3,7 @@ import Card from "../Movie/Movie";
 import MytrendModal from "../ModalMovie/modalMovie";
 import { useState } from "react";
 
-export default function MovieList({ trending }) {
+export default function MovieList({ trendingMovie }) {
   const [show, setShow] = useState(false);
   const [chosenRecipe, setChosenRecipe] = useState();
   const handleClose = () => setShow(false);
@@ -14,17 +14,17 @@ export default function MovieList({ trending }) {
   }
   return (
     <>
-      {trending.map(trend => {
+      {trendingMovie.map(trend => {
         return (
           <>
-            <Card trend={trend} handelChosenMovie={handelChosenMovie} />
+            <Card movie={trend} handelChosenMovie={handelChosenMovie} />
 
           </>
         );
       })}
       {chosenRecipe && (
         <MytrendModal
-          trend={chosenRecipe}
+        movies={chosenRecipe}
           show={show}
           handleClose={handleClose}
         />

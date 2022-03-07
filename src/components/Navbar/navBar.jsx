@@ -1,12 +1,15 @@
-
 import React from "react";
-import {Link} from "react-router-dom"
-
-export default function Navbar(){
-    return(
-        <nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="MovieList">MovieList</Link>
-        </nav>
-    )
+import { Nav } from "react-bootstrap";
+export default function Navbar() {
+    return (
+        <Nav>
+            <Nav.Item>
+                <Nav.Link href="/">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/getMovies">Favorite</Nav.Link>
+            </Nav.Item>
+        </Nav>
+    );
 }
+
